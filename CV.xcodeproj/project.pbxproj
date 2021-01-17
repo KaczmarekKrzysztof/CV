@@ -15,6 +15,14 @@
 		E631497225B4ADD6000A6BBD /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497125B4ADD6000A6BBD /* CVViewModel.swift */; };
 		E631497425B4B1E4000A6BBD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497325B4B1E4000A6BBD /* MainCoordinator.swift */; };
 		E631497725B4B676000A6BBD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497625B4B676000A6BBD /* Coordinator.swift */; };
+		E631497C25B4BD51000A6BBD /* CVRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497B25B4BD51000A6BBD /* CVRepository.swift */; };
+		E631497F25B4BD8E000A6BBD /* CVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497E25B4BD8E000A6BBD /* CVModel.swift */; };
+		E631498225B4C123000A6BBD /* CVHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498125B4C123000A6BBD /* CVHeaderCell.swift */; };
+		E631498425B4C4D6000A6BBD /* ConfigurableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498325B4C4D6000A6BBD /* ConfigurableCellProtocol.swift */; };
+		E631498625B4DC6E000A6BBD /* CVProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498525B4DC6E000A6BBD /* CVProfileCell.swift */; };
+		E631498825B4DC7A000A6BBD /* CVExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498725B4DC7A000A6BBD /* CVExperienceCell.swift */; };
+		E631498A25B4DC87000A6BBD /* CVEducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498925B4DC87000A6BBD /* CVEducationCell.swift */; };
+		E631498C25B4DC99000A6BBD /* CVSkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498B25B4DC99000A6BBD /* CVSkillCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		E631497125B4ADD6000A6BBD /* CVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewModel.swift; sourceTree = "<group>"; };
 		E631497325B4B1E4000A6BBD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E631497625B4B676000A6BBD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E631497B25B4BD51000A6BBD /* CVRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVRepository.swift; sourceTree = "<group>"; };
+		E631497E25B4BD8E000A6BBD /* CVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVModel.swift; sourceTree = "<group>"; };
+		E631498125B4C123000A6BBD /* CVHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVHeaderCell.swift; sourceTree = "<group>"; };
+		E631498325B4C4D6000A6BBD /* ConfigurableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCellProtocol.swift; sourceTree = "<group>"; };
+		E631498525B4DC6E000A6BBD /* CVProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVProfileCell.swift; sourceTree = "<group>"; };
+		E631498725B4DC7A000A6BBD /* CVExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVExperienceCell.swift; sourceTree = "<group>"; };
+		E631498925B4DC87000A6BBD /* CVEducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEducationCell.swift; sourceTree = "<group>"; };
+		E631498B25B4DC99000A6BBD /* CVSkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSkillCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +79,8 @@
 				E631496B25B48F0A000A6BBD /* Modules */,
 				E631497825B4B693000A6BBD /* Application */,
 				E631497525B4B653000A6BBD /* Navigation */,
+				E631497A25B4BD3A000A6BBD /* Repositories */,
+				E631497D25B4BD7C000A6BBD /* Models */,
 				E631497925B4B6A9000A6BBD /* Resources */,
 			);
 			path = CV;
@@ -79,6 +97,7 @@
 		E631496C25B48F31000A6BBD /* CV */ = {
 			isa = PBXGroup;
 			children = (
+				E631498025B4C110000A6BBD /* Cells */,
 				E631496D25B48F54000A6BBD /* CVContract.swift */,
 				E631496F25B4ADCB000A6BBD /* CVViewController.swift */,
 				E631497125B4ADD6000A6BBD /* CVViewModel.swift */,
@@ -111,6 +130,35 @@
 				E631496525B47AD2000A6BBD /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		E631497A25B4BD3A000A6BBD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E631497B25B4BD51000A6BBD /* CVRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E631497D25B4BD7C000A6BBD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E631497E25B4BD8E000A6BBD /* CVModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E631498025B4C110000A6BBD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E631498325B4C4D6000A6BBD /* ConfigurableCellProtocol.swift */,
+				E631498125B4C123000A6BBD /* CVHeaderCell.swift */,
+				E631498525B4DC6E000A6BBD /* CVProfileCell.swift */,
+				E631498725B4DC7A000A6BBD /* CVExperienceCell.swift */,
+				E631498925B4DC87000A6BBD /* CVEducationCell.swift */,
+				E631498B25B4DC99000A6BBD /* CVSkillCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +231,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E631498425B4C4D6000A6BBD /* ConfigurableCellProtocol.swift in Sources */,
+				E631498A25B4DC87000A6BBD /* CVEducationCell.swift in Sources */,
+				E631497C25B4BD51000A6BBD /* CVRepository.swift in Sources */,
 				E631496E25B48F54000A6BBD /* CVContract.swift in Sources */,
+				E631498225B4C123000A6BBD /* CVHeaderCell.swift in Sources */,
+				E631497F25B4BD8E000A6BBD /* CVModel.swift in Sources */,
 				E631497025B4ADCB000A6BBD /* CVViewController.swift in Sources */,
 				E631497725B4B676000A6BBD /* Coordinator.swift in Sources */,
+				E631498C25B4DC99000A6BBD /* CVSkillCell.swift in Sources */,
 				E631495A25B47AD0000A6BBD /* AppDelegate.swift in Sources */,
 				E631497225B4ADD6000A6BBD /* CVViewModel.swift in Sources */,
 				E631497425B4B1E4000A6BBD /* MainCoordinator.swift in Sources */,
+				E631498825B4DC7A000A6BBD /* CVExperienceCell.swift in Sources */,
+				E631498625B4DC6E000A6BBD /* CVProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ extension CV {
 extension CV {
     
     struct State {
-        
+        let model: CVModel?
     }
     
 }

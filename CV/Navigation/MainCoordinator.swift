@@ -18,7 +18,8 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        let viewModel = CV.ViewModel()
+        let repository = CVRepository()
+        let viewModel = CV.ViewModel(repository: repository)
         let viewController = CV.ViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: false)
     }
