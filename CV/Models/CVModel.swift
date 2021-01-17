@@ -10,10 +10,10 @@ import Foundation
 
 struct CVModel {
     let header: Header
-    let profile: Profile?
-    let experience: [Experience]?
-    let education: [Education]?
-    let skills: [Skill]?
+    let profile: DescriptionItem?
+    let experience: [TitleWithDescriptionItem]?
+    let education: [DescriptionItem]?
+    let skills: [TitleWithDescriptionItem]?
 }
 
 struct Header {
@@ -22,20 +22,11 @@ struct Header {
     let email: String
 }
 
-struct Profile {
+struct DescriptionItem {
     let description: String
 }
 
-struct Experience {
-    let title: String
-    let description: String
-}
-
-struct Education {
-    let description: String
-}
-
-struct Skill {
+struct TitleWithDescriptionItem {
     let title: String
     let description: String
 }

@@ -19,10 +19,12 @@
 		E631497F25B4BD8E000A6BBD /* CVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497E25B4BD8E000A6BBD /* CVModel.swift */; };
 		E631498225B4C123000A6BBD /* CVHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498125B4C123000A6BBD /* CVHeaderCell.swift */; };
 		E631498425B4C4D6000A6BBD /* ConfigurableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498325B4C4D6000A6BBD /* ConfigurableCellProtocol.swift */; };
-		E631498625B4DC6E000A6BBD /* CVProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498525B4DC6E000A6BBD /* CVProfileCell.swift */; };
-		E631498825B4DC7A000A6BBD /* CVExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498725B4DC7A000A6BBD /* CVExperienceCell.swift */; };
-		E631498A25B4DC87000A6BBD /* CVEducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498925B4DC87000A6BBD /* CVEducationCell.swift */; };
-		E631498C25B4DC99000A6BBD /* CVSkillCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498B25B4DC99000A6BBD /* CVSkillCell.swift */; };
+		E631498625B4DC6E000A6BBD /* CVDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498525B4DC6E000A6BBD /* CVDescriptionCell.swift */; };
+		E631498825B4DC7A000A6BBD /* CVTitleWithDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498725B4DC7A000A6BBD /* CVTitleWithDescriptionCell.swift */; };
+		E631498E25B4E950000A6BBD /* CVHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631498D25B4E950000A6BBD /* CVHeaderView.swift */; };
+		E631499125B4EDA7000A6BBD /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499025B4EDA7000A6BBD /* UIFont+Additions.swift */; };
+		E631499325B4EE45000A6BBD /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499225B4EE45000A6BBD /* UIColor+Additions.swift */; };
+		E631499525B4F95C000A6BBD /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499425B4F95C000A6BBD /* UINavigationController+StatusBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,10 +42,12 @@
 		E631497E25B4BD8E000A6BBD /* CVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVModel.swift; sourceTree = "<group>"; };
 		E631498125B4C123000A6BBD /* CVHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVHeaderCell.swift; sourceTree = "<group>"; };
 		E631498325B4C4D6000A6BBD /* ConfigurableCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableCellProtocol.swift; sourceTree = "<group>"; };
-		E631498525B4DC6E000A6BBD /* CVProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVProfileCell.swift; sourceTree = "<group>"; };
-		E631498725B4DC7A000A6BBD /* CVExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVExperienceCell.swift; sourceTree = "<group>"; };
-		E631498925B4DC87000A6BBD /* CVEducationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVEducationCell.swift; sourceTree = "<group>"; };
-		E631498B25B4DC99000A6BBD /* CVSkillCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVSkillCell.swift; sourceTree = "<group>"; };
+		E631498525B4DC6E000A6BBD /* CVDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVDescriptionCell.swift; sourceTree = "<group>"; };
+		E631498725B4DC7A000A6BBD /* CVTitleWithDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVTitleWithDescriptionCell.swift; sourceTree = "<group>"; };
+		E631498D25B4E950000A6BBD /* CVHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVHeaderView.swift; sourceTree = "<group>"; };
+		E631499025B4EDA7000A6BBD /* UIFont+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
+		E631499225B4EE45000A6BBD /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		E631499425B4F95C000A6BBD /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				E631497525B4B653000A6BBD /* Navigation */,
 				E631497A25B4BD3A000A6BBD /* Repositories */,
 				E631497D25B4BD7C000A6BBD /* Models */,
+				E631498F25B4ED96000A6BBD /* Extensions */,
 				E631497925B4B6A9000A6BBD /* Resources */,
 			);
 			path = CV;
@@ -97,6 +102,7 @@
 		E631496C25B48F31000A6BBD /* CV */ = {
 			isa = PBXGroup;
 			children = (
+				E631498D25B4E950000A6BBD /* CVHeaderView.swift */,
 				E631498025B4C110000A6BBD /* Cells */,
 				E631496D25B48F54000A6BBD /* CVContract.swift */,
 				E631496F25B4ADCB000A6BBD /* CVViewController.swift */,
@@ -153,12 +159,20 @@
 			children = (
 				E631498325B4C4D6000A6BBD /* ConfigurableCellProtocol.swift */,
 				E631498125B4C123000A6BBD /* CVHeaderCell.swift */,
-				E631498525B4DC6E000A6BBD /* CVProfileCell.swift */,
-				E631498725B4DC7A000A6BBD /* CVExperienceCell.swift */,
-				E631498925B4DC87000A6BBD /* CVEducationCell.swift */,
-				E631498B25B4DC99000A6BBD /* CVSkillCell.swift */,
+				E631498525B4DC6E000A6BBD /* CVDescriptionCell.swift */,
+				E631498725B4DC7A000A6BBD /* CVTitleWithDescriptionCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E631498F25B4ED96000A6BBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E631499025B4EDA7000A6BBD /* UIFont+Additions.swift */,
+				E631499225B4EE45000A6BBD /* UIColor+Additions.swift */,
+				E631499425B4F95C000A6BBD /* UINavigationController+StatusBar.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,20 +245,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E631499125B4EDA7000A6BBD /* UIFont+Additions.swift in Sources */,
 				E631498425B4C4D6000A6BBD /* ConfigurableCellProtocol.swift in Sources */,
-				E631498A25B4DC87000A6BBD /* CVEducationCell.swift in Sources */,
 				E631497C25B4BD51000A6BBD /* CVRepository.swift in Sources */,
 				E631496E25B48F54000A6BBD /* CVContract.swift in Sources */,
 				E631498225B4C123000A6BBD /* CVHeaderCell.swift in Sources */,
 				E631497F25B4BD8E000A6BBD /* CVModel.swift in Sources */,
+				E631498E25B4E950000A6BBD /* CVHeaderView.swift in Sources */,
+				E631499525B4F95C000A6BBD /* UINavigationController+StatusBar.swift in Sources */,
 				E631497025B4ADCB000A6BBD /* CVViewController.swift in Sources */,
 				E631497725B4B676000A6BBD /* Coordinator.swift in Sources */,
-				E631498C25B4DC99000A6BBD /* CVSkillCell.swift in Sources */,
 				E631495A25B47AD0000A6BBD /* AppDelegate.swift in Sources */,
 				E631497225B4ADD6000A6BBD /* CVViewModel.swift in Sources */,
 				E631497425B4B1E4000A6BBD /* MainCoordinator.swift in Sources */,
-				E631498825B4DC7A000A6BBD /* CVExperienceCell.swift in Sources */,
-				E631498625B4DC6E000A6BBD /* CVProfileCell.swift in Sources */,
+				E631498825B4DC7A000A6BBD /* CVTitleWithDescriptionCell.swift in Sources */,
+				E631498625B4DC6E000A6BBD /* CVDescriptionCell.swift in Sources */,
+				E631499325B4EE45000A6BBD /* UIColor+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

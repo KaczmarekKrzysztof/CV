@@ -16,15 +16,14 @@ extension CV {
         private var currentState: State?
         
         private lazy var tableView: UITableView = {
-            let tableView = UITableView(frame: CGRect.zero, style: .plain)
+            let tableView = UITableView(frame: CGRect.zero, style: .grouped)
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.separatorColor = UIColor.white
+            tableView.separatorColor = UIColor.background()
+            tableView.backgroundColor = UIColor.background()
             tableView.register(CVHeaderCell.self, forCellReuseIdentifier: "CVHeaderCell")
-            tableView.register(CVProfileCell.self, forCellReuseIdentifier: "CVProfileCell")
-            tableView.register(CVExperienceCell.self, forCellReuseIdentifier: "CVExperienceCell")
-            tableView.register(CVEducationCell.self, forCellReuseIdentifier: "CVEducationCell")
-            tableView.register(CVSkillCell.self, forCellReuseIdentifier: "CVSkillCell")
+            tableView.register(CVDescriptionCell.self, forCellReuseIdentifier: "CVDescriptionCell")
+            tableView.register(CVTitleWithDescriptionCell.self, forCellReuseIdentifier: "CVTitleWithDescriptionCell")
             return tableView
         }()
         
@@ -60,6 +59,23 @@ extension CV.ViewController: UITableViewDataSource, UITableViewDelegate {
         case experience
         case education
         case skills
+        
+        var title: String? {
+            let title: String?
+            switch self {
+            case .header:
+                title = nil
+            case .profile:
+                title = "Profile"
+            case .experience:
+                title = "Professional Experience"
+            case .education:
+                title = "Education"
+            case .skills:
+                title = "Skills"
+            }
+            return title
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -95,22 +111,22 @@ extension CV.ViewController: UITableViewDataSource, UITableViewDelegate {
                 cell = headerCell
             }
         case .profile:
-            if let profileCell = tableView.dequeueReusableCell(withIdentifier: "CVProfileCell", for: indexPath) as? CVProfileCell, let profile = currentState?.model?.profile {
+            if let profileCell = tableView.dequeueReusableCell(withIdentifier: "CVDescriptionCell", for: indexPath) as? CVDescriptionCell, let profile = currentState?.model?.profile {
                 profileCell.configure(with: profile)
                 cell = profileCell
             }
         case .experience:
-            if let experienceCell = tableView.dequeueReusableCell(withIdentifier: "CVExperienceCell", for: indexPath) as? CVExperienceCell, let experience = currentState?.model?.experience {
+            if let experienceCell = tableView.dequeueReusableCell(withIdentifier: "CVTitleWithDescriptionCell", for: indexPath) as? CVTitleWithDescriptionCell, let experience = currentState?.model?.experience {
                 experienceCell.configure(with: experience[indexPath.row])
                 cell = experienceCell
             }
         case .education:
-            if let educationCell = tableView.dequeueReusableCell(withIdentifier: "CVEducationCell", for: indexPath) as? CVEducationCell, let education = currentState?.model?.education {
+            if let educationCell = tableView.dequeueReusableCell(withIdentifier: "CVDescriptionCell", for: indexPath) as? CVDescriptionCell, let education = currentState?.model?.education {
                 educationCell.configure(with: education[indexPath.row])
                 cell = educationCell
             }
         case .skills:
-            if let skillCell = tableView.dequeueReusableCell(withIdentifier: "CVSkillCell", for: indexPath) as? CVSkillCell, let skills = currentState?.model?.skills {
+            if let skillCell = tableView.dequeueReusableCell(withIdentifier: "CVTitleWithDescriptionCell", for: indexPath) as? CVTitleWithDescriptionCell, let skills = currentState?.model?.skills {
                 skillCell.configure(with: skills[indexPath.row])
                 cell = skillCell
             }
@@ -118,6 +134,16 @@ extension CV.ViewController: UITableViewDataSource, UITableViewDelegate {
         
         
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let sectionEnum = Section(rawValue: section), let title = sectionEnum.title else { return nil }
+        return CVHeaderView(title: title)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let sectionEnum = Section(rawValue: section), sectionEnum.title != nil else { return 0 }
+        return 52
     }
     
 }
@@ -131,11 +157,11 @@ private extension CV.ViewController {
     
     func setUp() {
         navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.background()
         view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
