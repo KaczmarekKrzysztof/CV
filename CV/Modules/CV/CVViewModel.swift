@@ -11,6 +11,7 @@ import Foundation
 extension CV {
     
     class ViewModel: CVViewModelProtocol {
+        weak var view: CVViewProtocol?
         
         func sendAction(_ action: CV.Action) {
             process(action: action)

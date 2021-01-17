@@ -31,5 +31,6 @@ protocol CVViewProtocol: class {
 }
 
 protocol CVViewModelProtocol: class {
+    var view: CVViewProtocol? { get set }
     func sendAction(_ action: CV.Action)
 }

@@ -8,26 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		E631495A25B47AD0000A6BBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631495925B47AD0000A6BBD /* AppDelegate.swift */; };
-		E631495C25B47AD0000A6BBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631495B25B47AD0000A6BBD /* ViewController.swift */; };
-		E631495F25B47AD0000A6BBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E631495D25B47AD0000A6BBD /* Main.storyboard */; };
 		E631496125B47AD2000A6BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E631496025B47AD2000A6BBD /* Assets.xcassets */; };
 		E631496425B47AD2000A6BBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E631496225B47AD2000A6BBD /* LaunchScreen.storyboard */; };
 		E631496E25B48F54000A6BBD /* CVContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631496D25B48F54000A6BBD /* CVContract.swift */; };
 		E631497025B4ADCB000A6BBD /* CVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631496F25B4ADCB000A6BBD /* CVViewController.swift */; };
 		E631497225B4ADD6000A6BBD /* CVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497125B4ADD6000A6BBD /* CVViewModel.swift */; };
+		E631497425B4B1E4000A6BBD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497325B4B1E4000A6BBD /* MainCoordinator.swift */; };
+		E631497725B4B676000A6BBD /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631497625B4B676000A6BBD /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E631495625B47AD0000A6BBD /* CV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E631495925B47AD0000A6BBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E631495B25B47AD0000A6BBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E631495E25B47AD0000A6BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E631496025B47AD2000A6BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E631496325B47AD2000A6BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E631496525B47AD2000A6BBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E631496D25B48F54000A6BBD /* CVContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVContract.swift; sourceTree = "<group>"; };
 		E631496F25B4ADCB000A6BBD /* CVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewController.swift; sourceTree = "<group>"; };
 		E631497125B4ADD6000A6BBD /* CVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVViewModel.swift; sourceTree = "<group>"; };
+		E631497325B4B1E4000A6BBD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		E631497625B4B676000A6BBD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				E631496B25B48F0A000A6BBD /* Modules */,
-				E631495925B47AD0000A6BBD /* AppDelegate.swift */,
-				E631495B25B47AD0000A6BBD /* ViewController.swift */,
-				E631495D25B47AD0000A6BBD /* Main.storyboard */,
-				E631496025B47AD2000A6BBD /* Assets.xcassets */,
-				E631496225B47AD2000A6BBD /* LaunchScreen.storyboard */,
-				E631496525B47AD2000A6BBD /* Info.plist */,
+				E631497825B4B693000A6BBD /* Application */,
+				E631497525B4B653000A6BBD /* Navigation */,
+				E631497925B4B6A9000A6BBD /* Resources */,
 			);
 			path = CV;
 			sourceTree = "<group>";
@@ -87,6 +84,33 @@
 				E631497125B4ADD6000A6BBD /* CVViewModel.swift */,
 			);
 			path = CV;
+			sourceTree = "<group>";
+		};
+		E631497525B4B653000A6BBD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E631497625B4B676000A6BBD /* Coordinator.swift */,
+				E631497325B4B1E4000A6BBD /* MainCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E631497825B4B693000A6BBD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E631495925B47AD0000A6BBD /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E631497925B4B6A9000A6BBD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E631496025B47AD2000A6BBD /* Assets.xcassets */,
+				E631496225B47AD2000A6BBD /* LaunchScreen.storyboard */,
+				E631496525B47AD2000A6BBD /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +173,6 @@
 			files = (
 				E631496425B47AD2000A6BBD /* LaunchScreen.storyboard in Resources */,
 				E631496125B47AD2000A6BBD /* Assets.xcassets in Resources */,
-				E631495F25B47AD0000A6BBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,23 +185,16 @@
 			files = (
 				E631496E25B48F54000A6BBD /* CVContract.swift in Sources */,
 				E631497025B4ADCB000A6BBD /* CVViewController.swift in Sources */,
-				E631495C25B47AD0000A6BBD /* ViewController.swift in Sources */,
+				E631497725B4B676000A6BBD /* Coordinator.swift in Sources */,
 				E631495A25B47AD0000A6BBD /* AppDelegate.swift in Sources */,
 				E631497225B4ADD6000A6BBD /* CVViewModel.swift in Sources */,
+				E631497425B4B1E4000A6BBD /* MainCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E631495D25B47AD0000A6BBD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E631495E25B47AD0000A6BBD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E631496225B47AD2000A6BBD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -310,8 +326,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CV/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CV/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,8 +344,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CV/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CV/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

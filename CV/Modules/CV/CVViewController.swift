@@ -12,6 +12,17 @@ import UIKit
 extension CV {
     
     class ViewController: UIViewController, CVViewProtocol {
+        private let viewModel: CVViewModelProtocol
+        
+        init(viewModel: CVViewModelProtocol) {
+            self.viewModel = viewModel
+            super.init(nibName: nil, bundle: nil)
+            self.viewModel.view = self
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
         
         func update(with state: CV.State) {
             render(state: state)
