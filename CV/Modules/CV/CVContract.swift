@@ -35,7 +35,7 @@ extension CV {
 
 extension CV {
     
-    enum Alert {
+    enum Alert: Equatable {
         case none
         case errorWithRetry(message: String)
     }

@@ -12,10 +12,10 @@ extension CV {
     
     class ViewModel: CVViewModelProtocol {
         weak var view: CVViewProtocol?
-        private let repository: CVRepository
+        private let repository: CVRepositoryProtocol
         private var model: CVModel?
         
-        init(repository: CVRepository) {
+        init(repository: CVRepositoryProtocol) {
             self.repository = repository
         }
         

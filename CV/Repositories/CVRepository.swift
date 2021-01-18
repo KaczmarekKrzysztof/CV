@@ -12,7 +12,11 @@ struct RequestError: Error {
     
 }
 
-class CVRepository {
+protocol CVRepositoryProtocol {
+    func fetchCV(completion: (Result<CVModel>) -> Void)
+}
+
+class CVRepository: CVRepositoryProtocol {
     // TODO: add proper repository with networking and fetching data from server
     
     func fetchCV(completion: (Result<CVModel>) -> Void) {
