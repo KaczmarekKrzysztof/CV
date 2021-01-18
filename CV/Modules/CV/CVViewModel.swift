@@ -31,13 +31,23 @@ private extension CV.ViewModel {
     func process(action: CV.Action) {
         
         switch action {
-        case .didLoad:
+        case .didLoad, .didTapRetry:
             view?.update(with: CV.State(model: nil))
-            repository.fetchCV { [weak self] model in
-                guard let self = self else { return }
+            fetchCVAndUpdateView()
+        }
+    }
+    
+    func fetchCVAndUpdateView() {
+        repository.fetchCV { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let model):
                 self.model = model
                 self.view?.update(with: CV.State(model: model))
+            case .failure(_):
+                self.view?.update(with: CV.State(model: nil, alert: .errorWithRetry(message: "Couldn't load CV, try again.")))
             }
+            
         }
     }
     

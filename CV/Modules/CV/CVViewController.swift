@@ -13,7 +13,9 @@ extension CV {
     
     class ViewController: UIViewController, CVViewProtocol {
         private let viewModel: CVViewModelProtocol
-        private var currentState: State?
+        private(set) var currentState: State?
+        
+        private let placeholderView: CVPlaceholderView = CVPlaceholderView()
         
         private lazy var tableView: UITableView = {
             let tableView = UITableView(frame: CGRect.zero, style: .grouped)
@@ -49,6 +51,52 @@ extension CV {
         
     }
     
+}
+
+private extension CV.ViewController {
+    
+    func render(state: CV.State) {
+        currentState = state
+        tableView.reloadData()
+        let shouldShowPlaceholder: Bool = state.model == nil
+        showPlaceholderIfNeeded(shouldShowPlaceholder)
+        if case .errorWithRetry(let message) = state.alert {
+            presentAlertWithMessage(message)
+        }
+    }
+    
+    func setUp() {
+        navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = UIColor.background()
+        view.addSubview(tableView)
+        view.addSubview(placeholderView)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        placeholderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+        
+        placeholderView.topAnchor.constraint(equalTo: view.topAnchor, constant: 00).isActive = true
+        placeholderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        placeholderView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        placeholderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+    }
+    
+    func showPlaceholderIfNeeded(_ shouldShowPlaceholder: Bool) {
+        placeholderView.isHidden = !shouldShowPlaceholder
+    }
+    
+    func presentAlertWithMessage(_ message: String) {
+        let retryAction = UIAlertAction(title: "Retry", style: .default) { (_) in
+            self.viewModel.sendAction(.didTapRetry)
+        }
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(retryAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 extension CV.ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -87,7 +135,7 @@ extension CV.ViewController: UITableViewDataSource, UITableViewDelegate {
         let numberOfRows: Int
         switch sectionEnum {
         case .header:
-            numberOfRows = 1
+            numberOfRows = state.model != nil ? 1 : 0
         case .profile:
             numberOfRows = state.model?.profile != nil ? 1 : 0
         case .experience:
@@ -144,27 +192,6 @@ extension CV.ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         guard let sectionEnum = Section(rawValue: section), sectionEnum.title != nil else { return 0 }
         return 52
-    }
-    
-}
-
-private extension CV.ViewController {
-    
-    func render(state: CV.State) {
-        currentState = state
-        tableView.reloadData()
-    }
-    
-    func setUp() {
-        navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = UIColor.background()
-        view.addSubview(tableView)
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
     }
     
 }

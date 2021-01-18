@@ -25,6 +25,8 @@
 		E631499125B4EDA7000A6BBD /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499025B4EDA7000A6BBD /* UIFont+Additions.swift */; };
 		E631499325B4EE45000A6BBD /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499225B4EE45000A6BBD /* UIColor+Additions.swift */; };
 		E631499525B4F95C000A6BBD /* UINavigationController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499425B4F95C000A6BBD /* UINavigationController+StatusBar.swift */; };
+		E631499725B4FD74000A6BBD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499625B4FD74000A6BBD /* Result.swift */; };
+		E631499925B5052D000A6BBD /* CVPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631499825B5052D000A6BBD /* CVPlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		E631499025B4EDA7000A6BBD /* UIFont+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
 		E631499225B4EE45000A6BBD /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		E631499425B4F95C000A6BBD /* UINavigationController+StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+StatusBar.swift"; sourceTree = "<group>"; };
+		E631499625B4FD74000A6BBD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E631499825B5052D000A6BBD /* CVPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				E631498D25B4E950000A6BBD /* CVHeaderView.swift */,
+				E631499825B5052D000A6BBD /* CVPlaceholderView.swift */,
 				E631498025B4C110000A6BBD /* Cells */,
 				E631496D25B48F54000A6BBD /* CVContract.swift */,
 				E631496F25B4ADCB000A6BBD /* CVViewController.swift */,
@@ -141,6 +146,7 @@
 		E631497A25B4BD3A000A6BBD /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				E631499625B4FD74000A6BBD /* Result.swift */,
 				E631497B25B4BD51000A6BBD /* CVRepository.swift */,
 			);
 			path = Repositories;
@@ -256,9 +262,11 @@
 				E631497025B4ADCB000A6BBD /* CVViewController.swift in Sources */,
 				E631497725B4B676000A6BBD /* Coordinator.swift in Sources */,
 				E631495A25B47AD0000A6BBD /* AppDelegate.swift in Sources */,
+				E631499925B5052D000A6BBD /* CVPlaceholderView.swift in Sources */,
 				E631497225B4ADD6000A6BBD /* CVViewModel.swift in Sources */,
 				E631497425B4B1E4000A6BBD /* MainCoordinator.swift in Sources */,
 				E631498825B4DC7A000A6BBD /* CVTitleWithDescriptionCell.swift in Sources */,
+				E631499725B4FD74000A6BBD /* Result.swift in Sources */,
 				E631498625B4DC6E000A6BBD /* CVDescriptionCell.swift in Sources */,
 				E631499325B4EE45000A6BBD /* UIColor+Additions.swift in Sources */,
 			);

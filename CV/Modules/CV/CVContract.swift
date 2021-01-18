@@ -14,6 +14,7 @@ extension CV {
     
     enum Action {
         case didLoad
+        case didTapRetry
     }
     
 }
@@ -22,11 +23,26 @@ extension CV {
     
     struct State {
         let model: CVModel?
+        let alert: Alert
+        
+        init(model: CVModel?, alert: Alert = .none) {
+            self.model = model
+            self.alert = alert
+        }
     }
     
 }
 
+extension CV {
+    
+    enum Alert {
+        case none
+        case errorWithRetry(message: String)
+    }
+}
+
 protocol CVViewProtocol: class {
+    var currentState: CV.State? { get }
     func update(with state: CV.State)
 }
 
